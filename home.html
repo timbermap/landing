@@ -1,0 +1,402 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<header class="masthead">
+  <div class="header-content">
+    <div class="header-content-inner">
+      <h1 id="homeHeading" style="background-color: rgba(60, 43, 36, 0.25); padding:0.4em; border-radius:5px; border:1px solid rgba(233, 236, 239, 0.4)">
+          <span style="color: #93c47d">TIMBERMAP</span> Forestry AI</h1>
+      <h4 style="font-weight:500; padding:0.5em">Forestry & Environmental solutions by Forestech Uy</h4>
+      <hr class="light">
+      {% if session.logged_in == NULL %}
+      <a class="btn btn-success btn-xl js-scroll-trigger" href="/login" style="color:#fff">Login</a>
+      <br>
+      <a class="btn btn-link btn-xl js-scroll-trigger" href="/register" style="color:#ffffff;">SignUp for free</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+<section class="bg-primary" id="product">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-heading text-white" style="text-transform:uppercase">Our Product: Process data online with state of the art AI algorythms.</h2>
+        <hr class="light">
+        <p class="text-faded">Get insights that you've never imagined and start adding value to your data. Improve your bottom line with our artificial intelligence solutions.</p>
+        <a class="btn btn-default btn-xl js-scroll-trigger" href="/register">Get Started!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">How does it work?</h2>
+        <hr class="primary">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <i class="fa fa-4x fa-lightbulb text-primary sr-icons"></i>
+          <h3>1. Define scope</h3>
+          <p class="text-muted">Imagine a solution that suits your needs.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <i class="fa fa-4x fa-code text-primary sr-icons"></i>
+          <h3>2. Choose your algorythm</h3>
+          <p class="text-muted">Select a state of the art solutions. If the algorythm doesnt exist we will create it.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <i class="fa fa-4x fa-spinner text-primary sr-icons"></i>
+          <h3>3. Deploy & Scale</h3>
+          <p class="text-muted">We deploy the solution online and provide the platform that will enable you to scale.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <i class="fa fa-4x fa-smile text-primary sr-icons"></i>
+          <h3>Run & Achieve</h3>
+          <p class="text-muted">Just click run, display and download insights. Fast and accurate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background-color:#f9f9f9; color:#93c47d; padding: 3em;">
+  <div class="container">
+    <div class="row">
+        <div class="container text-center">
+          <h4>Unlock the AI power and get Forestry, Environment and Substainability insights.</h4>
+          <br>
+          <a class="btn btn-success" href="/register">Free Signup!</a>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+{% if (privatemodels|length > 0) %}
+
+  <section class="bg-dark" id="solutions">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white" style="text-transform:uppercase">Solutions Center.</h2>
+          <hr class="light">
+          <p class="text-faded">Our customers are all to us.<br>
+          Try our solutions for free: signup, select your solution, upload and process.</p>
+        </div>
+
+        <div class="row no-gutter popup-gallery">
+
+          {% for model in privatemodels %}
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_{{ model.id }}_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      {{ model.category }}
+                    </div>
+                    <div class="project-name">
+                      {{ model.name }}
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+  
+  
+  
+        </div>
+
+        <div class="col-lg-8 mx-auto text-center">
+          <hr class="light">
+          <p class="text-faded">Start today.<br>
+          If you cant't find the solution you are looking for, we will be happy to create it for you.</p>
+          <a class="btn btn-light" href="/register">Free Signup!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endif %}
+
+<!-- COUNTER AND SUCCESS RATE-->
+<section style="padding: 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h3 class="section-heading" style="text-transform:uppercase" >Our succes rate and experience</h3>
+        <p class="text" style="text-transform:uppercase; color: #222222;" >Last 365 days statistics:</p>
+        <hr class="light">
+      </div>
+    </div>
+    <div class="row">
+        <div class="four col-md-3">
+            <div class="counter-box colored"> <i class="fa fa-thumbs-up"></i> 
+              <span class="counter">
+                {{ "{:,}".format((modelstats365.count)|round|int) }}
+            </span>
+                <p>Process Runned</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-map"></i> 
+              <span class="counter">
+                {{ modelstats365.aoiimg }}
+              </span>
+                <p>Processed Hectares</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-map"></i> 
+              <span class="counter">
+                {{ imagestats.count }}
+              </span>
+                <p>Processed Images</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-map"></i> 
+              <span class="counter">
+                {{ imagestats.file_size }}
+              </span>
+                <p>Processed Gigabytes</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE STYLE 1-->
+<section id="pricing" style="background-color: #f8f9fa; padding: 3em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+          <h2 class="section-heading" style="color:#93c47d">PRICING TABLE</h2>
+          <p class="text-faded" style="color: #92c47c; margin-bottom: 2em;">Find the subscription that best suits your needs.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- fieldsets -->
+    <fieldset>
+    
+    <div class="row subscription" style="text-align: center;">
+        <div class="col details">
+            <div class="head">
+                <h4>Subscription features</h4>
+            </div>
+            <div class="monthly">
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Maximum storage space in Gigabytes to be used at the same time by raster/images.">Raster/image Storage (Gb)</a></li>
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Maximum number of raster/images files to be stored at the same time.">Raster/image filecount</a></li>                                                        
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Maximum storage space in Megabytes to be used at the same time by Vector/Shapefiles.">Vector/Shapefile Storage (Mb)</a></li>
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Maximum number of Vector/Shapefiles files to be stored at the same time.">Vector/Shapefile filecount</a></li>                                                        
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of solutions/algorythms activated at the same time.">Available Solutions/Algorythms</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of new solutions/algorythms activated during the last month.">Monthly Quota new solutions </a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of solutions a customer can run within the same day.">Max. process per day</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of solutions a customer can run within the same week (last 7 days).">Max. process per week</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of solutions a customer can run within the same month (last 30 days).">Max. process per month</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of files a customer can download within the same day.">Max. downloads per day</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of files a customer can download within the same week (last 7 days).">Max. downloads per week</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of files a customer can download within the same month (last 30 days).">Max. downloads per month</a></li>  
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col free">
+            <div class="head">
+                <h4>{{accountdata[0].description}}</h4>
+                <h6>{{accountdata[0].detail}}</h6>
+            </div>
+            <div class="monthly">
+                <h6>${{accountdata[0].pricing}}</h6>
+                <p>per month</p>
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li>{{ "{:,}".format((accountdata[0].cat_max_img_mb)|round|int )}} (Mb)</li>
+                    <li>{{accountdata[0].cat_max_img_count}}</li>
+                    <li>{{accountdata[0].cat_max_shp_mb}}</li>
+                    <li>{{accountdata[0].cat_max_shp_count}}</li>
+                    <li>{{accountdata[0].sol_max_models}}</li>
+                    <li>{{accountdata[0].sol_max_change_month}}</li>
+                    <li>{{accountdata[0].sol_max_run_day}}</li>
+                    <li>{{accountdata[0].sol_max_run_week}}</li>
+                    <li>{{accountdata[0].sol_max_run_month}}</li>
+                    <li>{{accountdata[0].sol_max_dow_day}}</li>
+                    <li>{{accountdata[0].sol_max_dow_week}}</li>
+                    <li>{{accountdata[0].sol_max_dow_month}}</li>
+                </ul>
+            </div>
+            <div class="checkaccount">
+              <a class="btn btn-success" href="/register">Free Signup</a>
+            </div>
+
+        </div>
+
+        <div class="col subpricing">
+            <div class="head">
+                <h4>{{accountdata[1].description}}</h4>
+                <h6>{{accountdata[1].detail}}</h6>
+            </div>
+            <div class="monthly">
+                <h6>${{accountdata[1].pricing}}</h6>
+                <p>per month</p>
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li>{{ "{:,}".format((accountdata[1].cat_max_img_mb/1000)|round|int )}} Gb</li>
+                    <li>{{accountdata[1].cat_max_img_count}}</li>
+                    <li>{{accountdata[1].cat_max_shp_mb}}</li>
+                    <li>{{accountdata[1].cat_max_shp_count}}</li>
+                    <li>{{accountdata[1].sol_max_models}}</li>
+                    <li>{{accountdata[1].sol_max_change_month}}</li>
+                    <li>{{accountdata[1].sol_max_run_day}}</li>
+                    <li>{{accountdata[1].sol_max_run_week}}</li>
+                    <li>{{accountdata[1].sol_max_run_month}}</li>
+                    <li>{{accountdata[1].sol_max_dow_day}}</li>
+                    <li>{{accountdata[1].sol_max_dow_week}}</li>
+                    <li>{{accountdata[1].sol_max_dow_month}}</li>
+                </ul>
+            </div>
+            <div class="checkaccount">
+              <a class="btn btn-default btn-xl js-scroll-trigger" href="/contact">Contact us</a>
+            </div>
+        </div>
+
+        <div class="col subpricing">
+            <div class="head">
+                <h4>{{accountdata[2].description}}</h4>
+                <h6>{{accountdata[2].detail}}</h6>
+            </div>
+            <div class="monthly">
+                <h6>${{accountdata[2].pricing}}</h6>
+                <p>per month</p>
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li>{{ "{:,}".format((accountdata[2].cat_max_img_mb/1000)|round|int )}}  Gb</li>
+                    <li>{{accountdata[2].cat_max_img_count}}</li>
+                    <li>{{accountdata[2].cat_max_shp_mb}}</li>
+                    <li>{{accountdata[2].cat_max_shp_count}}</li>
+                    <li>{{accountdata[2].sol_max_models}}</li>
+                    <li>{{accountdata[2].sol_max_change_month}}</li>
+                    <li>{{accountdata[2].sol_max_run_day}}</li>
+                    <li>{{accountdata[2].sol_max_run_week}}</li>
+                    <li>{{accountdata[2].sol_max_run_month}}</li>
+                    <li>{{accountdata[2].sol_max_dow_day}}</li>
+                    <li>{{accountdata[2].sol_max_dow_week}}</li>
+                    <li>{{accountdata[2].sol_max_dow_month}}</li>
+                </ul>
+            </div>
+            <div class="checkaccount">
+              <a class="btn btn-default btn-xl js-scroll-trigger" href="/contact">Contact us</a>
+            </div>
+        </div>
+
+        <div class="col subpricing">
+            <div class="head">
+                <h4>{{accountdata[3].description}}</h4>
+                <h6>{{accountdata[3].detail}}</h6>
+            </div>
+            <div class="monthly">
+                <h6>${{accountdata[3].pricing}}</h6>
+                <p>per month</p>
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li>{{ "{:,}".format((accountdata[3].cat_max_img_mb/1000)|round|int )}} Gb</li>
+                    <li>{{accountdata[3].cat_max_img_count}}</li>
+                    <li>{{accountdata[3].cat_max_shp_mb}}</li>
+                    <li>{{accountdata[3].cat_max_shp_count}}</li>
+                    <li>{{accountdata[3].sol_max_models}}</li>
+                    <li>{{accountdata[3].sol_max_change_month}}</li>
+                    <li>{{accountdata[3].sol_max_run_day}}</li>
+                    <li>{{accountdata[3].sol_max_run_week}}</li>
+                    <li>{{accountdata[3].sol_max_run_month}}</li>
+                    <li>{{accountdata[3].sol_max_dow_day}}</li>
+                    <li>{{accountdata[3].sol_max_dow_week}}</li>
+                    <li>{{accountdata[3].sol_max_dow_month}}</li>
+
+                </ul>
+            </div>
+            <div class="checkaccount">
+              <a class="btn btn-default btn-xl js-scroll-trigger" href="/contact">Contact us</a>
+            </div>
+        </div>
+    </div>
+    
+  </fieldset>
+  </div>
+
+</section>
+<!-- PRICING TABLE STYLE 1-->
+
+<!-- Footer-->
+<div class="py-3 bg-dark text-secondary" style="font-size: smaller;">
+<div class="container">
+  <div class="row">
+      <div class="col-md-7 text-center text-md-left">
+          <p class="mb-md-0">(C) Timbermap. All rights reserved. </p>
+      </div>
+      <div class="col-md-5 text-center text-md-right">
+          <p class="mb-0">TIMBERMAP is powered by <a href="#" class="external text-white">Forestech Uruguay SRL</a> </p>
+      </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+{% block script %}
+<script> 
+function commaSeparateNumber(val) {
+  while (/(\d+)(\d{3})/.test(val.toString())) {
+    val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+  }
+  return val;
+}
+
+$(document).ready(function() {
+
+  $('.counter').each(function () {
+    $(this).prop('Counter',0).animate({
+    Counter: $(this).text()
+      }, {
+      duration: 4000,
+      easing: 'swing',
+      step: function (now) {
+      $(this).text(commaSeparateNumber(Math.ceil(now)));
+      }
+    });
+  });
+
+  //pop over pricing
+  $('[data-toggle="popover"]').popover();   
+  $(".company :input").prop("disabled", true);
+
+});
+
+
+</script>
+
+{% endblock %}
