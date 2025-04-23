@@ -1,123 +1,657 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TimberMap - Forestry Analytics</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: url('header-image.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-        header h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        header p {
-            font-size: 24px;
-            margin: 10px 0;
-        }
-        .cta-button {
-            background-color: #ff7f50;
-            color: white;
-            padding: 10px 30px;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .cta-button:hover {
-            background-color: #e15a3d;
-        }
-        .content {
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .content h2 {
-            font-size: 36px;
-        }
-        .content p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .features {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 60px;
-        }
-        .feature {
-            width: 30%;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .feature img {
-            max-width: 100%;
-            height: auto;
-        }
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        footer a {
-            color: #ff7f50;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <header>
-        <h1>TimberMap</h1>
-        <p>Analytics for the Forestry Industry - Powered by Drones & Satellite Imagery</p>
-        <a href="#contact" class="cta-button">Get Started</a>
-    </header>
+    <title>Timbermap by Forestech</title>
 
-    <div class="content">
-        <h2>Transforming Forestry with Data and Brains</h2>
-        <h2>PAgina demo</h2>
-        <p>At TimberMap, we help forestry companies make informed decisions by providing powerful analytics. Our platform allows you to upload your data, and we’ll develop algorithms to generate actionable results for you. With the power of drones and satellite imagery, we bring the forest to your fingertips.</p>
+    <!-- Bootstrap core CSS -->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="/include/css/bootstrap-4.0/css/bootstrap.css">
+
+    <!-- Custom fonts for this template -->
+    <!--<link rel="stylesheet" type="text/css" href="/static/css/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome_v6.0.0/css/all.css">
+  
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/magnific-popup/magnific-popup.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="/static/css/creative.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ9G7H18XY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PQ9G7H18XY');
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/css/jquery/jquery.min.js"></script>
+     <!--<script src="/static/css/popper/popper.min.js"></script> -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.1/umd/popper.min.js" integrity="sha512-LCNYs7jH7Odmoc6adflrhgpq0cJmq8fwQJq3ICCBuk8BKFwA0PL6pVgVcKFnfNc0dJ+UmFp5sYvjG+jjlh7nXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="/static/css/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/static/css/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/static/css/scrollreveal/scrollreveal.min.js"></script>
+    <script src="/static/css/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/static/css/js/creative.min.js"></script>
+    
+
+  </head>
+  <body id="page-top">
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        
+        
+          <a id="logo" class="navbar-brand js-scroll-trigger" href="/" style="width:160px">Forestech</a>
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          
+            
+            
+            <!-- <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Company
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Contact Us</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul> -->
+
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item ml-3">
+                <a class="nav-link js-scroll-trigger" href="/#product">Product</a>
+              </li>
+
+              <li class="nav-item ml-3">
+                <a class="nav-link js-scroll-trigger" href="/#solutions">Solutions</a>
+              </li>
+
+              <li class="nav-item ml-3">
+                <a class="nav-link js-scroll-trigger" href="/#pricing">Pricing</a>
+              </li>
+
+              <li class="nav-item dropdown ml-3">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Company
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Partners</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/contact">Contact Us</a>
+                </div>
+              </li>
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+
+
+              <li class="nav-item ml-3">
+                <a class="nav-link js-scroll-trigger" style="background-color: #28a745; border-radius: 0.2em;" href="/login">Login</a>
+              </li>
+            </ul>
+          
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    
+<header class="masthead">
+  <div class="header-content">
+    <div class="header-content-inner">
+      <h1 id="homeHeading" style="background-color: rgba(60, 43, 36, 0.25); padding:0.4em; border-radius:5px; border:1px solid rgba(233, 236, 239, 0.4)">
+          <span style="color: #93c47d">TIMBERMAP</span> Forestry AI</h1>
+      <h4 style="font-weight:500; padding:0.5em">Forestry & Environmental solutions by Forestech Uy</h4>
+      <hr class="light">
+      
+      <a class="btn btn-success btn-xl js-scroll-trigger" href="/login" style="color:#fff">Login</a>
+      <br>
+      <a class="btn btn-link btn-xl js-scroll-trigger" href="/register" style="color:#ffffff;">SignUp for free</a>
+      
     </div>
+  </div>
+</header>
 
-    <div class="features">
-        <div class="feature">
-            <img src="drone-image.jpg" alt="Drones">
-            <h3>Drones for Precision</h3>
-            <p>We use advanced drone technology to capture high-resolution imagery, enabling accurate and detailed analysis of forestry operations.</p>
+<section class="bg-primary" id="product">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-heading text-white" style="text-transform:uppercase">Our Product: Process data online with state of the art AI algorythms.</h2>
+        <hr class="light">
+        <p class="text-faded">Get insights that you've never imagined and start adding value to your data. Improve your bottom line with our artificial intelligence solutions.</p>
+        <a class="btn btn-default btn-xl js-scroll-trigger" href="/register">Get Started!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">How does it work?</h2>
+        <hr class="primary">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <i class="fa fa-4x fa-lightbulb text-primary sr-icons"></i>
+          <h3>1. Define scope</h3>
+          <p class="text-muted">Imagine a solution that suits your needs.</p>
         </div>
-        <div class="feature">
-            <img src="satellite-image.jpg" alt="Satellite Imagery">
-            <h3>Satellite Imagery</h3>
-            <p>Our platform integrates satellite data, providing a comprehensive view of forests and enabling large-scale monitoring from space.</p>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <i class="fa fa-4x fa-code text-primary sr-icons"></i>
+          <h3>2. Choose your algorythm</h3>
+          <p class="text-muted">Select a state of the art solutions. If the algorythm doesnt exist we will create it.</p>
         </div>
-        <div class="feature">
-            <img src="data-analysis.jpg" alt="Data Analysis">
-            <h3>Advanced Data Analytics</h3>
-            <p>We apply cutting-edge algorithms to analyze your data and deliver insights that help you optimize forest management and operations.</p>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <i class="fa fa-4x fa-spinner text-primary sr-icons"></i>
+          <h3>3. Deploy & Scale</h3>
+          <p class="text-muted">We deploy the solution online and provide the platform that will enable you to scale.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+          <i class="fa fa-4x fa-smile text-primary sr-icons"></i>
+          <h3>Run & Achieve</h3>
+          <p class="text-muted">Just click run, display and download insights. Fast and accurate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background-color:#f9f9f9; color:#93c47d; padding: 3em;">
+  <div class="container">
+    <div class="row">
+        <div class="container text-center">
+          <h4>Unlock the AI power and get Forestry, Environment and Substainability insights.</h4>
+          <br>
+          <a class="btn btn-success" href="/register">Free Signup!</a>
         </div>
     </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 TimberMap. All rights reserved.</p>
-        <p><a href="#contact">Contact Us</a></p>
-    </footer>
 
-</body>
+
+
+  <section class="bg-dark" id="solutions">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white" style="text-transform:uppercase">Solutions Center.</h2>
+          <hr class="light">
+          <p class="text-faded">Our customers are all to us.<br>
+          Try our solutions for free: signup, select your solution, upload and process.</p>
+        </div>
+
+        <div class="row no-gutter popup-gallery">
+
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_1_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Planting
+                    </div>
+                    <div class="project-name">
+                      Tree Counting Eucalyptus (12 months) - Plantacion
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_3_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Planting
+                    </div>
+                    <div class="project-name">
+                      Fault Detection Eucaliptus 12 months
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_4_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Planting
+                    </div>
+                    <div class="project-name">
+                      Tree Counting Eucalyptus (12 months) - Regrowth
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_5_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Harvest
+                    </div>
+                    <div class="project-name">
+                      Tree Counting Eucalyptus (2-8 years old)
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_11_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      General
+                    </div>
+                    <div class="project-name">
+                      Forest Delimitation RGB 12 months
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_7_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Planting
+                    </div>
+                    <div class="project-name">
+                      Tree Counting Eucalyptus (9-12 months)
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_10_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Planting
+                    </div>
+                    <div class="project-name">
+                      Tree Counting Eucalyptus (6 to 9 months)
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_12_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Planting
+                    </div>
+                    <div class="project-name">
+                      Tree Count Pine &amp; Eucalyptus (12 months)
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+            <div class="col-lg-3 col-sm-6">
+              <a class="portfolio-box">
+                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_17_small.png" alt="">
+                <div class="portfolio-box-caption">
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Planting
+                    </div>
+                    <div class="project-name">
+                      Raleo - Tree Count Pine
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+  
+  
+  
+        </div>
+
+        <div class="col-lg-8 mx-auto text-center">
+          <hr class="light">
+          <p class="text-faded">Start today.<br>
+          If you cant't find the solution you are looking for, we will be happy to create it for you.</p>
+          <a class="btn btn-light" href="/register">Free Signup!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- COUNTER AND SUCCESS RATE-->
+<section style="padding: 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h3 class="section-heading" style="text-transform:uppercase" >Our succes rate and experience</h3>
+        <p class="text" style="text-transform:uppercase; color: #222222;" >Last 365 days statistics:</p>
+        <hr class="light">
+      </div>
+    </div>
+    <div class="row">
+        <div class="four col-md-3">
+            <div class="counter-box colored"> <i class="fa fa-thumbs-up"></i> 
+              <span class="counter">
+                405
+            </span>
+                <p>Process Runned</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-map"></i> 
+              <span class="counter">
+                260536.180481
+              </span>
+                <p>Processed Hectares</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-map"></i> 
+              <span class="counter">
+                431
+              </span>
+                <p>Processed Images</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-map"></i> 
+              <span class="counter">
+                1556.7182
+              </span>
+                <p>Processed Gigabytes</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE STYLE 1-->
+<section id="pricing" style="background-color: #f8f9fa; padding: 3em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+          <h2 class="section-heading" style="color:#93c47d">PRICING TABLE</h2>
+          <p class="text-faded" style="color: #92c47c; margin-bottom: 2em;">Find the subscription that best suits your needs.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- fieldsets -->
+    <fieldset>
+    
+    <div class="row subscription" style="text-align: center;">
+        <div class="col details">
+            <div class="head">
+                <h4>Subscription features</h4>
+            </div>
+            <div class="monthly">
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Maximum storage space in Gigabytes to be used at the same time by raster/images.">Raster/image Storage (Gb)</a></li>
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Maximum number of raster/images files to be stored at the same time.">Raster/image filecount</a></li>                                                        
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Maximum storage space in Megabytes to be used at the same time by Vector/Shapefiles.">Vector/Shapefile Storage (Mb)</a></li>
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Maximum number of Vector/Shapefiles files to be stored at the same time.">Vector/Shapefile filecount</a></li>                                                        
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of solutions/algorythms activated at the same time.">Available Solutions/Algorythms</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of new solutions/algorythms activated during the last month.">Monthly Quota new solutions </a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of solutions a customer can run within the same day.">Max. process per day</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of solutions a customer can run within the same week (last 7 days).">Max. process per week</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of solutions a customer can run within the same month (last 30 days).">Max. process per month</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of files a customer can download within the same day.">Max. downloads per day</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of files a customer can download within the same week (last 7 days).">Max. downloads per week</a></li>  
+                    <li><a tabindex="0" class="btn btn-sm btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Feature Details" data-content="Number of files a customer can download within the same month (last 30 days).">Max. downloads per month</a></li>  
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col free">
+            <div class="head">
+                <h4>Free limited</h4>
+                <h6>Limited trial features.</h6>
+            </div>
+            <div class="monthly">
+                <h6>$0</h6>
+                <p>per month</p>
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li>100 (Mb)</li>
+                    <li>3</li>
+                    <li>1</li>
+                    <li>3</li>
+                    <li>3</li>
+                    <li>3</li>
+                    <li>3</li>
+                    <li>3</li>
+                    <li>3</li>
+                    <li>0</li>
+                    <li>0</li>
+                    <li>0</li>
+                </ul>
+            </div>
+            <div class="checkaccount">
+              <a class="btn btn-success" href="/register">Free Signup</a>
+            </div>
+
+        </div>
+
+        <div class="col subpricing">
+            <div class="head">
+                <h4>Starter</h4>
+                <h6>Unlock the power</h6>
+            </div>
+            <div class="monthly">
+                <h6>$800</h6>
+                <p>per month</p>
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li>1 Gb</li>
+                    <li>5</li>
+                    <li>20</li>
+                    <li>5</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>3</li>
+                    <li>5</li>
+                    <li>3</li>
+                    <li>5</li>
+                    <li>10</li>
+                </ul>
+            </div>
+            <div class="checkaccount">
+              <a class="btn btn-default btn-xl js-scroll-trigger" href="/contact">Contact us</a>
+            </div>
+        </div>
+
+        <div class="col subpricing">
+            <div class="head">
+                <h4>Advanced</h4>
+                <h6>Accelerate change</h6>
+            </div>
+            <div class="monthly">
+                <h6>$2500</h6>
+                <p>per month</p>
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li>10  Gb</li>
+                    <li>10</li>
+                    <li>50</li>
+                    <li>10</li>
+                    <li>3</li>
+                    <li>3</li>
+                    <li>3</li>
+                    <li>9</li>
+                    <li>12</li>
+                    <li>10</li>
+                    <li>20</li>
+                    <li>50</li>
+                </ul>
+            </div>
+            <div class="checkaccount">
+              <a class="btn btn-default btn-xl js-scroll-trigger" href="/contact">Contact us</a>
+            </div>
+        </div>
+
+        <div class="col subpricing">
+            <div class="head">
+                <h4>Premium</h4>
+                <h6>Enterprise Account</h6>
+            </div>
+            <div class="monthly">
+                <h6>$3500</h6>
+                <p>per month</p>
+            </div>
+            <div class="subdetails">
+                <ul>
+                    <li>100 Gb</li>
+                    <li>15</li>
+                    <li>100</li>
+                    <li>20</li>
+                    <li>5</li>
+                    <li>5</li>
+                    <li>5</li>
+                    <li>15</li>
+                    <li>25</li>
+                    <li>20</li>
+                    <li>50</li>
+                    <li>100</li>
+
+                </ul>
+            </div>
+            <div class="checkaccount">
+              <a class="btn btn-default btn-xl js-scroll-trigger" href="/contact">Contact us</a>
+            </div>
+        </div>
+    </div>
+    
+  </fieldset>
+  </div>
+
+</section>
+<!-- PRICING TABLE STYLE 1-->
+
+<!-- Footer-->
+<div class="py-3 bg-dark text-secondary" style="font-size: smaller;">
+<div class="container">
+  <div class="row">
+      <div class="col-md-7 text-center text-md-left">
+          <p class="mb-md-0">(C) Timbermap. All rights reserved. </p>
+      </div>
+      <div class="col-md-5 text-center text-md-right">
+          <p class="mb-0">TIMBERMAP is powered by <a href="#" class="external text-white">Forestech Uruguay SRL</a> </p>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+    
+<script> 
+function commaSeparateNumber(val) {
+  while (/(\d+)(\d{3})/.test(val.toString())) {
+    val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+  }
+  return val;
+}
+
+$(document).ready(function() {
+
+  $('.counter').each(function () {
+    $(this).prop('Counter',0).animate({
+    Counter: $(this).text()
+      }, {
+      duration: 4000,
+      easing: 'swing',
+      step: function (now) {
+      $(this).text(commaSeparateNumber(Math.ceil(now)));
+      }
+    });
+  });
+
+  //pop over pricing
+  $('[data-toggle="popover"]').popover();   
+  $(".company :input").prop("disabled", true);
+
+});
+
+
+</script>
+
+
+  </body>
 </html>
-
