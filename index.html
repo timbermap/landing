@@ -1,424 +1,247 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Timbermap</title>
-  
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forestech - TIMBERMAP Forestry AI</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   
-     <!-- Bootstrap 5 CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-    <!-- Font Awesome (only if you use icons) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        
-    <!-- Google Fonts (Optional: if you use special fonts) -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  
-    <!-- Animate.css -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-  
-    <!-- Owl Carousel -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
-  
-    <!-- Your custom style -->
-    <link href="include/bootstrap.css" rel="stylesheet">
-  
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" type="image/png">
-  </head>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .masthead {
+      height: 100vh;
+      min-height: 600px;
+      background: url('/static/img/forest_background.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    
+    .masthead::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-heading {
+      font-weight: 700;
+      margin-top: 1em;
+    }
+
+    .service-box {
+      padding: 2em;
+      margin: 1em 0;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .service-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .portfolio-box img {
+      transition: 0.3s;
+    }
+    .portfolio-box:hover img {
+      transform: scale(1.05);
+    }
+    
+    .portfolio-box-caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      width: 100%;
+      padding: 1em;
+      border-radius: 0 0 1.2em 1.2em;
+      color: white;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .btn-xl {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 0.5rem;
+    }
+
+    footer {
+      background-color: #343a40;
+      padding: 2em 0;
+      color: white;
+      text-align: center;
+    }
+
+  </style>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
 
 <body id="page-top">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
-    <div class="container">
-      
-      <!-- Brand -->
-      <a id="logo" class="navbar-brand" href="/" style="width:160px;">Forestech</a>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm" id="mainNav">
+  <div class="container">
+    <a id="logo" class="navbar-brand fw-bold" href="/" style="width:160px;">Forestech</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/#product">Product</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/#solutions">Solutions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/#pricing">Pricing</a>
-          </li>
-
-          <!-- Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Company
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Partners</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/contact">Contact Us</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <!-- Right side (Login button) -->
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" style="background-color: #28a745; border-radius: 0.2em; padding: 8px 15px; color: white;" href="/login">Login</a>
-          </li>
-        </ul>
-
-      </div> <!-- /.navbar-collapse -->
-
-    </div> <!-- /.container -->
-  </nav>
-
-
-
-    
-<header class="masthead">
-  <div class="header-content">
-    <div class="header-content-inner">
-      <h1 id="homeHeading" style="background-color: rgba(60, 43, 36, 0.25); padding:0.4em; border-radius:5px; border:1px solid rgba(233, 236, 239, 0.4)">
-          <span style="color: #93c47d">TIMBERMAP</span> Forestry AI</h1>
-      <h4 style="font-weight:500; padding:0.5em">Forestry & Environmental solutions by Forestech Uy</h4>
-      <hr class="light">
-      
-      <a class="btn btn-success btn-xl js-scroll-trigger" href="/login" style="color:#fff">Login</a>
-      <br>
-      <a class="btn btn-link btn-xl js-scroll-trigger" href="/register" style="color:#ffffff;">SignUp for free</a>
-      
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#product">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">Company</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Partners</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/contact">Contact Us</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="btn btn-success btn-sm" href="/login">Login</a>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead">
+  <div class="container header-content">
+    <h1 class="mb-3" style="background: rgba(60, 43, 36, 0.25); padding: 0.5em; border-radius: 10px;">
+      <span style="color: #93c47d;">TIMBERMAP</span> Forestry AI
+    </h1>
+    <h4 class="mb-4 fw-light">Forestry & Environmental solutions by Forestech Uy</h4>
+    <a class="btn btn-success btn-xl mb-3" href="/login">Login</a>
+    <br>
+    <a class="btn btn-outline-light btn-xl" href="/register">Sign Up for Free</a>
   </div>
 </header>
 
-<section class="bg-primary" id="product">
+<!-- Product -->
+<section class="bg-primary text-white text-center" id="product">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2 class="section-heading text-white" style="text-transform:uppercase">Our Product: Process data online with state of the art AI algorythms.</h2>
-        <hr class="light">
-        <p class="text-faded">Get insights that you've never imagined and start adding value to your data. Improve your bottom line with our artificial intelligence solutions.</p>
-        <a class="btn btn-default btn-xl js-scroll-trigger" href="/register">Get Started!</a>
-      </div>
-    </div>
+    <h2 class="section-heading text-uppercase">Our Product</h2>
+    <hr class="light my-4">
+    <p class="text-faded mb-4">Process data online with state-of-the-art AI algorithms. Get insights you’ve never imagined and start adding real value to your forestry data.</p>
+    <a class="btn btn-light btn-xl" href="/register">Get Started!</a>
   </div>
 </section>
 
+<!-- How It Works -->
 <section id="services">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading">How does it work?</h2>
-        <hr class="primary">
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 text-center">
+  <div class="container text-center">
+    <h2 class="section-heading text-uppercase">How does it work?</h2>
+    <hr class="primary my-4">
+    <div class="row mt-5">
+      <div class="col-lg-3 col-md-6 mb-4">
         <div class="service-box">
-          <i class="fa fa-4x fa-lightbulb text-primary sr-icons"></i>
-          <h3>1. Define scope</h3>
+          <i class="fas fa-lightbulb fa-3x text-success mb-3"></i>
+          <h4>1. Define Scope</h4>
           <p class="text-muted">Imagine a solution that suits your needs.</p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
+      <div class="col-lg-3 col-md-6 mb-4">
         <div class="service-box">
-          <i class="fa fa-4x fa-code text-primary sr-icons"></i>
-          <h3>2. Choose your algorythm</h3>
-          <p class="text-muted">Select a state of the art solutions. If the algorythm doesnt exist we will create it.</p>
+          <i class="fas fa-code fa-3x text-success mb-3"></i>
+          <h4>2. Choose Algorithm</h4>
+          <p class="text-muted">Select state-of-the-art solutions or request custom development.</p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
+      <div class="col-lg-3 col-md-6 mb-4">
         <div class="service-box">
-          <i class="fa fa-4x fa-spinner text-primary sr-icons"></i>
-          <h3>3. Deploy & Scale</h3>
-          <p class="text-muted">We deploy the solution online and provide the platform that will enable you to scale.</p>
+          <i class="fas fa-cloud-upload-alt fa-3x text-success mb-3"></i>
+          <h4>3. Deploy & Scale</h4>
+          <p class="text-muted">Deploy your solution online and scale effortlessly.</p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 text-center">
+      <div class="col-lg-3 col-md-6 mb-4">
         <div class="service-box">
-          <i class="fa fa-4x fa-smile text-primary sr-icons"></i>
-          <h3>Run & Achieve</h3>
-          <p class="text-muted">Just click run, display and download insights. Fast and accurate.</p>
+          <i class="fas fa-smile fa-3x text-success mb-3"></i>
+          <h4>4. Run & Achieve</h4>
+          <p class="text-muted">Click, run, visualize insights, and succeed.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background-color:#f9f9f9; color:#93c47d; padding: 3em;">
+<!-- Call to Action -->
+<section style="background-color:#f9f9f9; padding:3em;">
+  <div class="container text-center">
+    <h4 class="mb-4" style="color:#4caf50;">Unlock AI power in Forestry, Environment, and Sustainability.</h4>
+    <a class="btn btn-success btn-xl" href="/register">Free Sign Up!</a>
+  </div>
+</section>
+
+<!-- Solutions -->
+<section class="bg-dark text-white text-center" id="solutions">
   <div class="container">
-    <div class="row">
-        <div class="container text-center">
-          <h4>Unlock the AI power and get Forestry, Environment and Substainability insights.</h4>
-          <br>
-          <a class="btn btn-success" href="/register">Free Signup!</a>
-        </div>
+    <h2 class="section-heading text-uppercase">Solutions Center</h2>
+    <hr class="light my-4">
+    <p class="text-faded mb-5">Our customers are everything to us.<br> Try our solutions for free: sign up, upload, process.</p>
+
+    <div class="row g-4">
+      <!-- Example Image Block -->
+      <div class="col-lg-4 col-md-6">
+        <a class="portfolio-box position-relative d-block overflow-hidden">
+          <img class="img-fluid" src="../static/model_logo/model_1_small.png" alt="Tree Counting">
+          <div class="portfolio-box-caption d-flex align-items-center justify-content-center">
+            <div>
+              <h6>Planting</h6>
+              <p>Tree Counting Eucalyptus (12 months) - Plantation</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Repeat for other solutions... -->
+      <!-- Add more blocks for each model/logo as you had -->
+      
     </div>
   </div>
 </section>
 
-
-
-
-  <section class="bg-dark" id="solutions">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading text-white" style="text-transform:uppercase">Solutions Center.</h2>
-          <hr class="light">
-          <p class="text-faded">Our customers are all to us.<br>
-          Try our solutions for free: signup, select your solution, upload and process.</p>
-        </div>
-
-        <div class="row no-gutter popup-gallery">
-
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_1_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      Planting
-                    </div>
-                    <div class="project-name">
-                      Tree Counting Eucalyptus (12 months) - Plantacion
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_3_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      Planting
-                    </div>
-                    <div class="project-name">
-                      Fault Detection Eucaliptus 12 months
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_4_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      Planting
-                    </div>
-                    <div class="project-name">
-                      Tree Counting Eucalyptus (12 months) - Regrowth
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_5_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      Harvest
-                    </div>
-                    <div class="project-name">
-                      Tree Counting Eucalyptus (2-8 years old)
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_11_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      General
-                    </div>
-                    <div class="project-name">
-                      Forest Delimitation RGB 12 months
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_7_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      Planting
-                    </div>
-                    <div class="project-name">
-                      Tree Counting Eucalyptus (9-12 months)
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_10_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      Planting
-                    </div>
-                    <div class="project-name">
-                      Tree Counting Eucalyptus (6 to 9 months)
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_12_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      Planting
-                    </div>
-                    <div class="project-name">
-                      Tree Count Pine &amp; Eucalyptus (12 months)
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-lg-3 col-sm-6">
-              <a class="portfolio-box">
-                <img style="width: 100%; border: 0.6em solid transparent; border-radius: 1.2em;" class="img-fluid" src="../static/model_logo/model_17_small.png" alt="">
-                <div class="portfolio-box-caption">
-                  <div class="portfolio-box-caption-content">
-                    <div class="project-category text-faded">
-                      Planting
-                    </div>
-                    <div class="project-name">
-                      Raleo - Tree Count Pine
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-  
-  
-  
-        </div>
-
-        <div class="col-lg-8 mx-auto text-center">
-          <hr class="light">
-          <p class="text-faded">Start today.<br>
-          If you cant't find the solution you are looking for, we will be happy to create it for you.</p>
-          <a class="btn btn-light" href="/register">Free Signup!</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-<!-- COUNTER AND SUCCESS RATE-->
-<section style="padding: 2em;">
+<!-- Footer -->
+<footer>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <h3 class="section-heading" style="text-transform:uppercase" >Our succes rate and experience</h3>
-        <p class="text" style="text-transform:uppercase; color: #222222;" >Last 365 days statistics:</p>
-        <hr class="light">
-      </div>
-    </div>
-    <div class="row">
-        <div class="four col-md-3">
-            <div class="counter-box colored"> <i class="fa fa-thumbs-up"></i> 
-              <span class="counter">
-                405
-            </span>
-                <p>Process Runned</p>
-            </div>
-        </div>
-        <div class="four col-md-3">
-            <div class="counter-box"> <i class="fa fa-map"></i> 
-              <span class="counter">
-                260536.180481
-              </span>
-                <p>Processed Hectares</p>
-            </div>
-        </div>
-        <div class="four col-md-3">
-            <div class="counter-box"> <i class="fa fa-map"></i> 
-              <span class="counter">
-                431
-              </span>
-                <p>Processed Images</p>
-            </div>
-        </div>
-        <div class="four col-md-3">
-            <div class="counter-box"> <i class="fa fa-map"></i> 
-              <span class="counter">
-                1556.7182
-              </span>
-                <p>Processed Gigabytes</p>
-            </div>
-        </div>
-    </div>
+    <p class="m-0">© 2025 Forestech Uy. All Rights Reserved.</p>
   </div>
-</section>
+</footer>
 
-
-<!-- Footer-->
-<div class="py-3 bg-dark text-secondary" style="font-size: smaller;">
-<div class="container">
-  <div class="row">
-      <div class="col-md-7 text-center text-md-left">
-          <p class="mb-md-0">(C) Timbermap. All rights reserved. </p>
-      </div>
-      <div class="col-md-5 text-center text-md-right">
-          <p class="mb-0">TIMBERMAP is powered by <a href="#" class="external text-white">Forestech Uruguay SRL</a> </p>
-      </div>
-  </div>
-</div>
-</div>
-
-
-
-  <!-- Bootstrap 5 Bundle JS (includes Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Your custom JavaScript (if needed) -->
-  <script src="/js/scripts.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
