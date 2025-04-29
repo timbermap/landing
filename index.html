@@ -20,7 +20,7 @@
     .masthead {
       height: 100vh;
       min-height: 600px;
-      background: url('/static/img/forest_background.jpg') no-repeat center center;
+      background: url('images/header/header3.jpg') no-repeat center center;
       background-size: cover;
       display: flex;
       align-items: center;
@@ -29,14 +29,20 @@
       color: white;
       position: relative;
     }
-    
-    .masthead::after {
+
+    .masthead::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); /* Adjust opacity for darker or lighter effect */
+      z-index: 1; /* Makes sure the overlay is above the image but below text */
+    }
+
+    .masthead h1, .masthead p {
+      z-index: 2; /* Ensures text is above the overlay */
     }
 
     .header-content {
@@ -147,54 +153,61 @@
       <span style="color: #93c47d;">TIMBERMAP</span> Forestry AI
     </h1>
     <h4 class="mb-4 fw-light">Forestry & Environmental solutions by Forestech Uy</h4>
-    <a class="btn btn-success btn-xl mb-3" href="/login">Login</a>
-    <br>
-    <a class="btn btn-outline-light btn-xl" href="/register">Sign Up for Free</a>
+    <a class="btn btn-success btn-xl mb-3" href="/login">contact us</a>
   </div>
 </header>
 
 <!-- Product -->
-<section class="bg-primary text-white text-center" id="product">
-  <div class="container">
-    <h2 class="section-heading text-uppercase">Our Product</h2>
-    <hr class="light my-4">
-    <p class="text-faded mb-4">Process data online with state-of-the-art AI algorithms. Get insights you’ve never imagined and start adding real value to your forestry data.</p>
-    <a class="btn btn-light btn-xl" href="/register">Get Started!</a>
+<section class="text-white text-center" id="product" style="background-color: #198754;">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="images/header/m12_image3.jpg" alt="AI Forest Analysis" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="section-heading text-uppercase mb-3">Unlock Your Forest's Potential</h2>
+        <hr class="light my-4" style="border-top: 2px solid #ffffff; width: 100%;">
+        <p class="text-light mb-4">
+          Powerful AI. Deeper insights. Smarter forestry.
+        </p>
+        <a class="btn btn-light btn-xl" href="/register">Get Started</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- How It Works -->
 <section id="services">
   <div class="container text-center">
-    <h2 class="section-heading text-uppercase">How does it work?</h2>
+    <h2 class="section-heading text-uppercase">How It Works</h2>
     <hr class="primary my-4">
     <div class="row mt-5">
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="service-box">
           <i class="fas fa-lightbulb fa-3x text-success mb-3"></i>
-          <h4>1. Define Scope</h4>
-          <p class="text-muted">Imagine a solution that suits your needs.</p>
+          <h4>1. Set Your Goal</h4>
+          <p class="text-muted">Tell us what you want to achieve — simple or ambitious.</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="service-box">
-          <i class="fas fa-code fa-3x text-success mb-3"></i>
-          <h4>2. Choose Algorithm</h4>
-          <p class="text-muted">Select state-of-the-art solutions or request custom development.</p>
+          <i class="fas fa-cogs fa-3x text-success mb-3"></i>
+          <h4>2. Pick Your Tools</h4>
+          <p class="text-muted">Choose ready-to-use AI models or ask for a tailored solution.</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="service-box">
-          <i class="fas fa-cloud-upload-alt fa-3x text-success mb-3"></i>
-          <h4>3. Deploy & Scale</h4>
-          <p class="text-muted">Deploy your solution online and scale effortlessly.</p>
+          <i class="fas fa-rocket fa-3x text-success mb-3"></i>
+          <h4>3. Launch & Scale</h4>
+          <p class="text-muted">We deploy it for you — fully online, fully scalable.</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="service-box">
-          <i class="fas fa-smile fa-3x text-success mb-3"></i>
-          <h4>4. Run & Achieve</h4>
-          <p class="text-muted">Click, run, visualize insights, and succeed.</p>
+          <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+          <h4>4. See Results</h4>
+          <p class="text-muted">Visualize insights. Optimize your decisions. Grow faster.</p>
         </div>
       </div>
     </div>
@@ -202,50 +215,84 @@
 </section>
 
 <!-- Call to Action -->
-<section style="background-color:#f9f9f9; padding:3em;">
+<section style="background-color:#198754; padding:4em 0;">
   <div class="container text-center">
-    <h4 class="mb-4" style="color:#4caf50;">Unlock AI power in Forestry, Environment, and Sustainability.</h4>
-    <a class="btn btn-success btn-xl" href="/register">Free Sign Up!</a>
+    <h4 class="mb-4" style="color:white; font-size:1.5em;">Unlock the Power of AI for Forestry, Environment, and Sustainability</h4>
+    <p class="text-light mb-4" style="font-size:1.2em;">Harness cutting-edge AI to boost your data insights and drive sustainability efforts across industries.</p>
+    <a class="btn btn-light btn-xl" href="/register" style="background-color: #ffffff; color: #198754; border-radius: 8px; padding: 1em 2em;">Get Started for Free!</a>
   </div>
 </section>
 
-<!-- Solutions -->
-<section class="bg-dark text-white text-center" id="solutions">
+<!-- Contact Section -->
+<section id="contact" style="background-color:#f4f7fa; padding:5em 0;">
   <div class="container">
-    <h2 class="section-heading text-uppercase">Solutions Center</h2>
-    <hr class="light my-4">
-    <p class="text-faded mb-5">Our customers are everything to us.<br> Try our solutions for free: sign up, upload, process.</p>
-
-    <div class="row g-4">
-      <!-- Example Image Block -->
-      <div class="col-lg-4 col-md-6">
-        <a class="portfolio-box position-relative d-block overflow-hidden">
-          <img class="img-fluid" src="../static/model_logo/model_1_small.png" alt="Tree Counting">
-          <div class="portfolio-box-caption d-flex align-items-center justify-content-center">
-            <div>
-              <h6>Planting</h6>
-              <p>Tree Counting Eucalyptus (12 months) - Plantation</p>
-            </div>
+    <h2 class="text-center text-uppercase" style="color: #198754;">Contact Us</h2>
+    <hr class="my-4" style="border-color: #198754;">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form action="https://formspree.io/f/xrbgadqk" method="POST">
+          <!-- Name Field -->
+          <div class="form-group mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required style="border-color: #198754; border-radius: 8px; padding: 1em;">
           </div>
-        </a>
+          <!-- Email Field -->
+          <div class="form-group mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Your Email" required style="border-color: #198754; border-radius: 8px; padding: 1em;">
+          </div>
+          <!-- Message Field -->
+          <div class="form-group mb-3">
+            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required style="border-color: #198754; border-radius: 8px; padding: 1em;"></textarea>
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-block" style="background-color: #198754; color: white; border-radius: 8px; padding: 1em;">Send Message</button>
+        </form>
       </div>
-
-      <!-- Repeat for other solutions... -->
-      <!-- Add more blocks for each model/logo as you had -->
-      
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer>
-  <div class="container">
-    <p class="m-0">© 2025 Forestech Uy. All Rights Reserved.</p>
+<footer style="background-color: #198754; color: white; padding: 2em 0;">
+  <div class="container text-center">
+    <!-- Footer Links -->
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <h5>Company</h5>
+        <ul class="list-unstyled">
+          <li><a href="/about" style="color: white; text-decoration: none;">About Us</a></li>
+          <li><a href="/services" style="color: white; text-decoration: none;">Our Services</a></li>
+          <li><a href="/contact" style="color: white; text-decoration: none;">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="/terms" style="color: white; text-decoration: none;">Terms of Service</a></li>
+          <li><a href="/privacy" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+          <li><a href="/faq" style="color: white; text-decoration: none;">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Follow Us</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://twitter.com" style="color: white; text-decoration: none;">Twitter</a></li>
+          <li><a href="https://linkedin.com" style="color: white; text-decoration: none;">LinkedIn</a></li>
+          <li><a href="https://facebook.com" style="color: white; text-decoration: none;">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <p class="m-0">&copy; 2025 Forestech Uy. All Rights Reserved.</p>
   </div>
 </footer>
+
+
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+
+
